@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover extraordinary event planning services tailored to your needs. Our expert team designs and execute unforgettable events, from corporate conferences to weddings. Contact us now for a seamless and stress free event expericence.">
+    <meta name="keywords" content="event planning services, weddings, seamless and stress-free event expericence">
+    <meta name="author" content="Jolena Events">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="./css/all.css">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../css/fonts.css">
+    <!--Owl carousel-->
+    <link rel="stylesheet" href="./css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+    <!--AOS library-->
+    <link rel="stylesheet" href="./css/aos.css">
+    <!-- Custom Style -->
+    <link rel="shortcut icon" href="./css/assets/Jolena Events Favicon.png"  type="image/x-icon">
+    <title>Jolena Events</title>
+    <style>
+@import url('../CSS/fonts.css');
+:root{
+    --bg-black-500: #fcfdff;
+    --bg-black-900: #f5f6f8;
+    --bg-black-100: #fdf9ff;
+    --bg-black-50: #e8dfec;
+    --text-black-900: #080808;
+    --text-black-700: #504e70;
+    --text-gray:#3f4954;
+
+    /* theme font-family */
+    --Clicker:'Clicker', cursive;
+    --Poppins:'Poppins', cursive;
+    --Sansita: 'Sansita', cursive;
+    --Abril: 'Abril', cursive;
+}
+
+body.dark{
+    --bg-black-900: #151515;
+    --bg-black-100: #222222;
+    --bg-black-50: #393939;
+    --text-black-900: #ffffff;
+    --text-black-700: #e9e9e9;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color:var(--bg-black-900);
+    color:var(--text-black-900);
+}
+
+.container{
+    margin: 0 5vw;
+}
+
+.container2{
+    padding: 8px 8%;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.align-items-center{
+    align-items: center;
+}
+
+li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration-line: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+/*  Navigation  */
+
+#header{
+    position: relative;
+}
+
+.navbar{
+    padding-left: 50px;
+    background: none;
+    width: 100%;
+    top: 0; left: 0; right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    z-index: 10;
+    position: fixed;
+    height: 80px;
+    margin: 0 auto;
+    transition: all 0.5s ease;
+}
+
+.navbar.fixed{
+    background-color: var(--bg-black-500);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+
+.navbar.fixed .links li a{
+    color: var(--text-gray);
+    font-weight: 200;
+    font-size: 1.1rem;
+}
+
+.navbar.fixed .action_btn i{
+    color: var(--text-gray);
+}
+
+.navbar .toggle_btn{
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    margin-right: 20px;
+    position: relative;
+}
+
+.navbar.fixed .toggle_btn{
+    color: var(--text-gray);
+}
+
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+    position: relative;
+}
+
+.navbar .links li{
+    list-style-type: none;
+}
+
+.navbar .links li a{
+    font-family: 'Abril', sans-serif;
+    text-decoration-line: none;
+    font-size: 18px;
+    font-weight: 200;
+    position: relative;
+}
+
+.navbar .links li a.active{
+    background: linear-gradient(to right, #c69320 0%, #fceb01 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.navbar .links li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    border-radius: 3px;
+    background: linear-gradient(to right, #cc6600 0%, #ffff00 100%);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+.navbar .links li a:hover::after{
+    width: 100%;
+}
+
+.action_btn{
+    margin-right: 20px;
+}
+
+.action_btn i{
+    color: var(--bg-black-100);
+    padding: 0.2rem;
+
+} 
+
+.action_btn i:hover{
+    color: #e6cc00;
+}
+
+.navbar.fixed .action_btn i:hover{
+    color: #e6cc00;
+    scale: 1.05;
+}
+
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    background: #fcfdff;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
+    border-radius: 5px;
+    overflow: hidden;
+    height: 0;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open{
+    height: auto;
+}
+
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu li a{
+    color: #080808;
+    font-family: 'Abril', sans-serif;
+}
+
+.dropdown_menu li .drop{
+    padding: 0.5rem;
+}
+
+.dropdown_menu li .drop i:hover{
+    color: #e6cc00;
+    scale: 1.05;
+}
+
+.dropdown_menu li .drop i:active{
+    scale: 0.95;
+}
+
+.dropdown_menu li a{
+    transition: all 0.2s ease;   
+}
+
+.dropdown_menu li a.active{
+    color: #e6cf00;
+}
+
+.dropdown_menu li a:hover{
+    color: #e6cc00;
+    scale: 1.05;
+}
+/* Home section */
+
+.home-section{
+    min-height: 100vh;
+    position: relative;
+}
+
+.home-section .slide{
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s ease-in-out;
+}
+
+.home-section .slide.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.home-section .slide::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: -1;
+}
+
+.slide .waves{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+}
+
+.home-section .row{
+    min-height: 100vh;
+}
+
+.home-section .home-content{
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.home-section .home-content h1{
+    font-size: 55px;
+    color: #ffffff;
+    margin: 0;
+    font-weight: normal;
+    font-family: 'Playfair', sans-serif;
+    text-shadow: 3px 4px 5px #000;
+}
+
+/* Section Main */
+
+.btn1{
+    border: 2.5px solid var(--text-black-900);
+    background: none;
+    color: var(--text-black-900);
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    padding: 7px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    font-size: 13px;
+    font-weight: 800;
+    transition: scale .2 ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn1:hover{
+    background: var(--text-black-900);
+    padding: 7px 12px;
+    font-weight: 100;
+    color: #fff;
+    scale: 1.05;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.btn1:active{
+    scale: 0.95;
+}
+
+.btn1 i{
+    margin-left: 20px;
+}
+
+.banner .waves{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    left: 0;
+}
+
+.events{
+    text-align: center;
+    font-size: 30px;
+    background: none;
+    box-shadow: none;
+    font-family: 'Abril', sans-serif;
+    letter-spacing: .5px;
+}
+
+/*-------------Blog Carousel----------*/
+
+.blog .blog-post{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.blog-post .blog-content{
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 80%;
+    margin: 3rem 2rem;
+    border-radius: 5px;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2 );
+}
+
+.blog-content .blog-title{
+    padding: 2rem 4px;
+    font-size: 15px;
+}
+
+.blog-content .blog-title h3{
+    color: #161616;
+    font-weight: normal;
+    font-family: 'Abril', sans-serif;
+}
+
+section .container .owl-nav{
+    position: absolute;
+    top: 0%;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.owl-nav .owl-prev .owl-nav-prev,
+.owl-nav .owl-next .owl-nav-next{
+    color: var(--text-gray);
+    background-color: transparent;
+    font-size: 1.5rem;
+}
+
+.owl-theme .owl-nav[class='owl']:hover{
+    background: transparent;
+    color: var(--midnight);
+}
+
+/*-----x--------Blog Carousel-----x----*/
+
+.write-up{
+    text-align: center;
+    font-weight: 600;
+    text-justify: auto;
+}
+
+.write-up h3{
+    font-weight: 100;
+    font-family: 'Sansita', sans-serif;
+    font-size: 20px;
+    letter-spacing: .5px;
+}
+.write-up p{
+    font-size: 18pt;
+    font-family: 'Sansita', sans-serif;
+    letter-spacing: .5px;
+    margin-bottom: 10px;
+}
+
+/* Middle Picture */
+
+.pic .photo{
+    height: 70vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.inside{
+    padding: 10vh 5vw;
+}
+
+.inside h3{
+    font-size: 35px;
+    letter-spacing: .5px;
+    color: #fcfdff;
+    font-family: 'Sansita', sans-serif;
+}
+
+.inside a{
+    border: 2.5px solid #fcfdff;
+    background: none;
+    color: #fcfdff;
+    display: block;
+    width: fit-content;
+    margin-top:20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: scale .2 ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.inside a:hover{
+    scale: 1.05;
+}
+
+.inside a:active{
+    scale: 0.95;
+}
+
+ /* ------------------services---------------- */
+ #services{
+    padding: 30px 0;
+    background: var(--bg-black-900);
+}
+
+.subtitle{
+    font-family: 'Abril', sans-serif;
+}
+
+.services-list{
+    background: var(--bg-black-900);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap:50px;
+    margin-top: 40px;
+    box-shadow: none;
+}
+.services-list div{
+    background:white;
+    color:var(--text-gray);
+    padding: 30px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 5px;
+    margin-bottom: 4rem;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
+}
+
+.services-list div h4{
+    background: linear-gradient(to right, #7c7b7b 12%, #080808 40%);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 25px;
+    font-weight: 900;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.services-list div a{
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 15px;
+    margin-top: 20px;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+}
+.services-list div p{
+    font-size: 20px;
+    font-family: 'Dosis', sans-serif;
+    color: #000;
+}
+
+.services-list div:hover{
+    transform: translateY(-20px);
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3 );
+}
+
+.services-list div a:hover{
+    color: #e6cf00;
+}
+
+/* -----------portfolio---------- */
+
+#portfolio{
+    padding: 50px 0;
+}
+
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap:40px;
+    margin-top: 50px;
+}
+
+.work{
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.work img{
+    width: 100%;
+    border-radius: 50%;
+    display: block;
+    transition: transform 0.5s;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3 );
+}
+
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), #87ceeb);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    transition: height 0.5s;
+}
+
+.layer h2{
+    font-weight: 550;
+    margin-bottom: 20px;
+    font-family: 'Sansita', sans-serif;
+}
+
+.layer p{
+    font-size: 17px;
+    font-family: 'Sansita', sans-serif;
+    letter-spacing: .5px;
+}
+
+.layer a{
+    margin-top: 20px;
+    color: skyblue;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.layer a i:hover{
+    scale: 1.2;
+}
+
+.layer a i:active{
+    scale: 0.95;
+} 
+
+.work:hover img{
+    transform: scale(1.1);
+}
+
+.work:hover .layer{
+    height: 100%;
+}
+
+/* static photo2 */
+.pic2 .photo2{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.two{
+    border-top: 1px solid #bdbcbc;
+    margin:0 50px 50px;
+}
+
+.hidden-message{
+    text-align: center;
+    font-weight: 600;
+    text-justify: auto;
+    margin-bottom: 50px;
+}
+
+.hidden-message h3{
+    font-weight: 100;
+    font-family: 'Sansita', sans-serif;
+    font-size: 20px;
+    letter-spacing: .5px;
+}
+
+.hidden-message p{
+    font-size: 18pt;
+    font-family: 'Sansita', sans-serif;
+    letter-spacing: .5px;
+    margin-bottom: 10px;
+}
+
+.container3{
+    position: relative;
+    padding: 80px 8%;
+}
+
+.container3 .video-container{
+    display: flex;
+    flex: 0 0 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+/* contact items */
+
+.home-list{
+    margin: 100px 0;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.home-list div{
+    padding:0 90px;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.home-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.home-list div p{
+    text-align: center;
+    font-size: 20px;
+    color: #1f1f1f;
+    font-family: 'Playfair', sans-serif;
+} 
+
+/* Footer */
+
+.container-footer{
+    background-color: #080808;
+    padding: 90px 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.move-up{
+    padding-top: 30px;
+}
+
+.move-up:hover{
+    scale: 1.05;
+}
+
+.move-up:active{
+    scale: 0.95;
+}
+
+.move-up span{
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.move-up span:hover{
+    color: #e4d01e;
+}
+
+.logo2{
+    margin-left: 0%;
+}
+
+.follow{
+    padding-top: 30px;
+}
+
+.follow i{
+    font-size: 20px;
+    padding: 0 5px;
+    transition: scale .2 ease;
+    color: #fff;
+}
+
+.follow i:hover{
+    scale: 1.05;
+    color: #e4d01e;
+}
+
+.follow i:active{
+    scale: 0.95;
+}
+
+/* Responsive Design */
+@media(max-width: 1200px){
+    .home-list{
+        display: block;
+        top: 0;
+    }
+
+    .home-list div{
+        padding: 40px 0;
+        font-size: 13px;
+        font-weight: 300;
+    }
+
+    .slides1 .home-content h1{
+        padding: 40px 0;
+        font-size: 40px;
+        font-weight: 300;
+    }
+
+    .logo{
+        height: 3rem;
+        margin-left: -40px;
+    }
+
+}
+@media(max-width: 992px){
+
+    .navbar .links,
+    .navbar .action_btn{
+        display: none;
+    }
+
+    .dropdown_menu{
+        margin-top: 50px;
+        display: block;
+        position: fixed;
+        z-index: 1000;
+    }
+
+    .navbar .toggle_btn{
+        display: block;
+    }
+    .dropdown_menu{
+        display: block;
+    }
+
+    .subtitle{
+        text-align: center;
+    }
+
+    .btn1{
+        letter-spacing: normal;
+    }
+
+    .write-up h3,
+    .write-up p{
+        letter-spacing: normal;
+    }
+
+    .hidden-message h3,
+    .hidden-message p{
+        letter-spacing: normal;
+    }
+}
+
+@media (max-width:907px){
+    .container3 .popup-video video{
+        width: 95%;
+        left: 10px;
+    }
+
+    .container3{
+        display: block;
+        padding: auto 8%;
+    }
+
+    .container3 .write-up2{
+        display: none;
+    }
+
+    .two{
+        display: block;
+    }
+
+    .hidden-message{
+        display: block;
+    }
+}
+
+@media(max-width: 767px){
+    .container-footer{
+        display: block;
+        text-align: center;
+        align-items: center;
+    }
+
+    .move-up{
+        margin-bottom: 70px;
+        margin-left: 6%;
+    }
+
+    .logo2{
+        margin-top: 50px;
+        margin-left: 0;
+    }
+
+    .follow{
+        margin-top: 50px;
+    }
+
+    footer{
+        height: 70vh;
+        background: #080808;
+        justify-content: space-between;
+    }
+
+    .home-section .home-content h1{
+        font-size: 55px;
+    }
+
+}
+
+@media(max-width: 576px){
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+    }
+}
+
+@media(max-width: 547px){
+    .home-section .home-content h1{
+        font-size: 40px;
+    }
+}
+</style>
+</head>
+<body>
+    <!----- Navigation ----->
+    <div id="header">
+        <nav class="navbar">
+            <a href="#"><img src="./css/assets/jolena Image resized.png" class="logo" style="height: 4rem;" alt="logo1"></a>
+            <div class="toggle_btn">
+                <i class="fas fa-bars"></i>
+            </div>    
+            <div class="links" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="400">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="Aboutus.html">About</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="Contacts.html">Contact</a></li>
+            </div>
+            <div class="action_btn">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com/jolenaevents_?igshid=ZjE2NGZiNDQ="><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@jolenaevents?fbclid=PAAabKR7lM6XKFQKBXJzfFiPvjZs_xx0U03we3cGJgPhLUKoy5DLqd8iB_T5k"><i class="fab fa-tiktok"></i></a>
+            </div>
+
+            <div class="dropdown_menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="Aboutus.html">About</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="Contacts.html">Contact</a></li>
+                <li>
+                    <a href="#" class="drop"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="drop"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/jolenaevents_?igshid=ZjE2NGZiNDQ=" class="drop"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@jolenaevents?fbclid=PAAabKR7lM6XKFQKBXJzfFiPvjZs_xx0U03we3cGJgPhLUKoy5DLqd8iB_T5k" class="drop"><i class="fab fa-tiktok"></i></a>    
+                </li>
+            </div>
+        </nav>
+    </div>
+
+    <!--x-- Navigation --x-->
+
+    <!-- home section -->
+    <section class="home-section">
+        <!-- slide start -->
+        <div class="slide active" style="background-image: url(./assets/IMG_3168.JPG);">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 240"><path fill="var(--bg-black-900)" fill-opacity="1" d="M0,64L30,85.3C60,107,120,149,180,165.3C240,181,300,171,360,149.3C420,128,480,96,540,101.3C600,107,660,149,720,181.3C780,213,840,235,900,213.3C960,192,1020,128,1080,128C1140,128,1200,192,1260,202.7C1320,213,1380,171,1410,149.3L1440,128L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path></svg>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="home-content">
+                        <h1 data-aos="fade-down" data-aos-duration="1000" data-aos-delay="500">JOLENA EVENTS</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <!-- slide end -->
+        <!-- slide start -->
+        <div class="slide active" style="background-image: url(./assets/IMG_0347.JPG);">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 240"><path fill="var(--bg-black-900)" fill-opacity="1" d="M0,64L30,85.3C60,107,120,149,180,165.3C240,181,300,171,360,149.3C420,128,480,96,540,101.3C600,107,660,149,720,181.3C780,213,840,235,900,213.3C960,192,1020,128,1080,128C1140,128,1200,192,1260,202.7C1320,213,1380,171,1410,149.3L1440,128L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path></svg>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="home-content">
+                        <h1 data-aos="fade-down" data-aos-duration="1000" data-aos-delay="500">JOLENA EVENTS</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <!-- slide end -->
+      <!-- slide start -->
+      <div class="slide" style="background-image:url(./assets/Home-Page-1.webp)">
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 240"><path fill="var(--bg-black-900)" fill-opacity="1" d="M0,64L30,85.3C60,107,120,149,180,165.3C240,181,300,171,360,149.3C420,128,480,96,540,101.3C600,107,660,149,720,181.3C780,213,840,235,900,213.3C960,192,1020,128,1080,128C1140,128,1200,192,1260,202.7C1320,213,1380,171,1410,149.3L1440,128L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path></svg>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="home-content">
+                    <h1>JOLENA EVENTS</h1>
+                </div>
+            </div>
+        </div>
+      </div>    
+      <!-- slide end -->      
+      <!-- slide start -->
+      <div class="slide" style="background-image: url(./assets/IMG_6368.JPG)">
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 240"><path fill="var(--bg-black-900)" fill-opacity="1" d="M0,64L30,85.3C60,107,120,149,180,165.3C240,181,300,171,360,149.3C420,128,480,96,540,101.3C600,107,660,149,720,181.3C780,213,840,235,900,213.3C960,192,1020,128,1080,128C1140,128,1200,192,1260,202.7C1320,213,1380,171,1410,149.3L1440,128L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path></svg>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="home-content">
+                    <h1>JOLENA EVENTS</h1>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- slide end -->
+    </section>
+<section>
+        <div class="blog">
+            <div class="container">
+                <div class="container2">
+                <h1 class="events">Featured Events</h1>
+                </div>
+                <div class="owl-carousel owl-theme blog-post">
+                    <div class="blog-content">
+                        <a href="Gallery.html"><img src="./assets/IMG_6366.JPG" alt="post 1"></a>
+                        <div class="blog-title">
+                            <h3>Enjoy every moment of your event.</h3>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <a href="Gallery.html"><img src="./assets/IMG_6370.JPG" alt="post 1"></a>
+                        <div class="blog-title">
+                            <h3>Creating an atmosphere of luxury.</h3>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <a href="Gallery.html"><img src="./assets/E126F707-90E2-4497-A053-478529053C5C.jpg" alt="post 1"></a>
+                        <div class="blog-title">
+                            <h3>Creating memories to last a lifetime</h3>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <a href="Gallery.html"><img src="./assets/IMG_3168.JPG" alt="post 1"></a>
+                        <div class="blog-title">
+                            <h3>A touch of sophistication to the table.</h3>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <a href="Gallery.html"><img src="./assets/IMG_0190.JPG" alt="post 1"></a>
+                        <div class="blog-title">
+                            <h3>Creating unforgetable memories.</h3>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <a href="Gallery.html"><img src="./assets/IMG_3170.JPG" alt="post 1"></a>
+                        <div class="blog-title">
+                            <h3>Bringing people together in style.</h3>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <a href="Gallery.html"><img src="./assets/gift-habeshaw-O_x99zNKJFQ-unsplash.jpg" alt="post 1"></a>
+                        <div class="blog-title">
+                            <h3>Capturing the joy of the moment.</h3>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <a href="Gallery.html"><img src="./assets/WhatsApp Image 2023-03-03 at 10.41.53 PM.jpeg" alt="post 1"></a>
+                        <div class="blog-title">
+                            <h3>Making memories with peers that last a lifetime.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-navigation">
+                    <span class="owl-nav-prev"><i class="fas fa-long-arrow-alt-left"></i></span>
+                    <span class="owl-nav-next"><i class="fas fa-long-arrow-alt-right"></i></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="aboutus">
+        <div class="container2">
+            <div class="write-up">
+            <p data-aos="fade-up" data-aos-duration="1000">Jolena Events is not a conventional Event Company.</p>
+            <h3 data-aos="fade-up" data-aos-duration="1500">In Jolena Events we have a single goal of bringing style, splendor and opulence to your event. We go above and beyond in everything that we do to ensure our client gets a truly unique experience when they book us for an event. 
+            </h3>
+        </p>
+        <a href="Aboutus.html" class="btn1">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <br><br>
+        </div>
+    </div>
+    <!-- static photo -->
+    <div class="pic">
+        <div class="photo" style="background-image:linear-gradient( rgba(0, 0, 0, 0.3),rgba(0,0,0,0.3)), url(./assets/IMG_7319-pic.jpg);">
+            <div class="inside" data-aos="fade-down-right" data-aos-duration="1000" data-aos-delay="200">
+                <h3>Create your dream event<br>
+                    with Jolena today</h3>
+                <a href="Contacts.html" class="btn2">Contact Us</a>
+            </div>
+        </div>    
+    </div>
+    <!-- ------------services------------- -->
+<div id="services">
+    <br><br><br>
+    <div class="container">
+        <h1 class="subtitle">Our Services</h1>
+        <div class="services-list">
+            <div data-aos="fade-right" data-aos-duration="500" data-aos-delay="200">
+                <h4>Budget Management</h4>
+                <p> In Jolena Events, we help create realistic budgets and track expenses throughout 
+                    the planning process to ensure that our clients stay within 
+                    their financial means.</p>
+                <a href="Services.html">Learn more</a>
+            </div>
+            <div data-aos="fade-right" data-aos-duration="600" data-aos-delay="300">
+                <h4>On-site Coordination</h4>
+                <p> We oversee the entire event to ensure everything runs smoothly 
+                    and handle any unexpected issues that may arise.</p>
+                <a href="Services.html">Learn more</a>
+            </div>
+            <div data-aos="fade-right" data-aos-duration="700" data-aos-delay="400">
+                <h4>Guest Experience</h4>
+                <p> We create a memorable experience for your guests by coordinating entertainment, 
+                    activities, and other elements that will engage and delight attendees.</p>
+                <a href="Services.html">Learn more</a>
+            </div>
+            <div data-aos="fade-right" data-aos-duration="800" data-aos-delay="500">
+                <h4>Venue Selection & Coordination</h4>
+                <p> We assit Our Clients in finding the perfect location for your event based on your needs, preferences, and budget.</p>
+                <a href="Services.html">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div> 
+<!-- --------------portfolio-------------- -->
+<div id="portfolio">
+    <div class="container" style="overflow-x: hidden;">
+        <h1 class="subtitle">Our Work</h1>
+        <div class="work-list">
+            <div class="work" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-delay="200">
+                <img src="./assets/IMG_8014.JPG" alt="post-2">
+                <div class="layer">
+                    <h2>See More</h2>
+                    <p>Click on the eye to view some of Jolena Events asthetic gallery</p>
+                    <a href="Gallery.html"><i class="fas fa-eye"></i></a>
+                </div>
+            </div>
+            <div class="work" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+                <img src="./assets/9830FA56-8B96-48DB-B9EB-4CE9E3A741F6.JPG" alt="post-2">
+                <div class="layer">
+                    <h2>See More</h2>
+                    <p>Click on the eye to view some of Jolena Events asthetic gallery</p>
+                    <a href="Gallery.html"><i class="fas fa-eye"></i></a>
+                </div>
+            </div>
+            <div class="work" data-aos="zoom-in-left" data-aos-duration="1000" data-aos-delay="200">
+                <img src="./assets/EA43DDCA-4EEE-466A-B7F2-CDBEA2FFD58C.JPG" alt="post-2">
+                <div class="layer">
+                    <h2>See More</h2>
+                    <p>Click on the eye to view some of Jolena Events asthetic gallery</p>
+                    <a href="Gallery.html"><i class="fas fa-eye"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="Gallery.html" class="btn1">SEE MORE <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+</div>
+<!-- --------------portfolio-------------- -->
+
+<div class="two"></div>
+<div class="container2">
+    <div class="hidden-message">
+        <p data-aos="fade-up" data-aos-duration="1000">We are passionate about events planning,</p>
+        <h3 data-aos="fade-up" data-aos-duration="1500">And even more passionate about 
+            the process of collaborating with our clients in a thought provoking partnership where we walk them through a 
+            world of endless possibilities and options from which
+            they can select to make their event grand and delightful.
+        </h3>
+    </div>
+</div>
+
+<!-- static photo2 -->
+<div class="pic2">
+    <div class="photo2" style="background-image:linear-gradient( rgba(0, 0, 0, 0.3),rgba(0,0,0,0.3)), url(./assets/gene-gallin-rBt6OS_1xoI-unsplash\ \(1\)blured.jpg);">
+        <div class="container3">
+            <div class="video-container" data-aos="flip-up" data-aos-easing="ease-out-cubic" data-aos-duration="1000" data-aos-delay="200">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/YrhnOZe_Y9A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>        
+</div>
+
+<!-- home contact -->
+    <div id="home-contact">
+        <div class="container">
+            <div class="home-list">
+                <div>
+                    <i class="fa-solid fa-mobile"></i>
+                    <a href="tel:+1 (713) 815-1821"><p>+1 (713) 815-1821</p></a>
+                </div>
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Houston, TX</p>
+                </div>
+                <div>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:"><p>Jolenaevents@gmail.com</p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- home contact end -->
+<!-- footer start -->
+<footer style="height: 100%;">
+    <div class="footer">
+        <div class="container-footer">
+            <div class="move-up">
+                <span><i class="fas fa-arrow-circle-up fa-2x"></i></span>
+            </div>
+            <div class="logo2">
+                <img src="./css/assets/jolena Image resized.png" style="height: 6rem;" alt="footer-img">
+            </div>
+            <div class="follow">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <a href="https://instagram.com/jolenaevents_?igshid=ZjE2NGZiNDQ="><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@jolenaevents?fbclid=PAAabKR7lM6XKFQKBXJzfFiPvjZs_xx0U03we3cGJgPhLUKoy5DLqd8iB_T5k"><i class="fab fa-tiktok"></i></a>
+            </div>            
+        </div>
+    </div>
+</footer>
+<!-- footer ends -->
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+            ? 'fa-solid fa-xmark'
+            : 'fa-solid fa-bars'
+        }
+    </script>
+    <!--jquery library file-->
+    <script src="./js/jquery3.6.0.main.js"></script>
+
+    <!--Owl carsouel js-->
+    <script src="./js/owl.carousel.min.js"></script>
+    <script src="./js/owl.carousel.js"></script>
+        
+    <!--Aos library-->
+    <script src="./js/aos.js"></script>
+              
+    <!--Custom javascript-->
+    <script src="./js/main.js"></script>
+    <script src="./js/mainnewtemp.js"></script>
+</body>
+</html>
